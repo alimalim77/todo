@@ -19,7 +19,7 @@ export default async function TodoLists() {
       <h1 className="text-xl">TodoLists</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {todoLists.map((todo) => (
-          <div key={todo.key} className="bg-gray-800 p-4 relative">
+          <div key={todo.id} className="bg-gray-800 p-4 relative">
             <button className="absolute top-4 right-4">X</button>
             <div className="space-y-4">
               <h1 className="text-2xl">{todo.todo}</h1>

@@ -1,7 +1,9 @@
 "use client";
 import Input from "./Input";
+import { useRouter } from "next/navigation";
 
 export default function FormTodo() {
+  const router = useRouter();
   async function handleSubmit(e) {
     e.preventDefault();
     const formdata = new FormData(e.target);
@@ -18,10 +20,12 @@ export default function FormTodo() {
     });
     const data = await res.json();
     console.log(data);
+    router.refresh();
     e.target.reset();
+    router.push("/todo-list");
   }
   return (
-    <div className="grid grid-cols-1 place-items-center">
+    <div className="grid grid-cols-1 sapce-x-4 place-items-center">
       <form
         onSubmit={handleSubmit}
         className="bg-gray-800 p-4 w-[80vw] md:w-[40vw]"
