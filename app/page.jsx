@@ -1,3 +1,10 @@
+import FormTodo from "@/components/FormTodo";
+
 export default function Home() {
-    return <h1>Hello</h1>
+  return (
+    <main className="p-4">
+      <h1 className="text-slate-100 text-center mb-4 text-xl">Form Todo</h1>
+      <FormTodo />
+    </main>
+  );
 }
